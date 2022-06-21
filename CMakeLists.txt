@@ -6,9 +6,17 @@ project(utils
 )
 
 set(HDR
-	src/utils/assert.h)
+	src/utils/assert.h
+	src/utils/avl.h
+	src/utils/avl_impl.h
+	src/utils/helpers.h
+	src/utils/list.h
+	src/utils/list_impl.h)
 set(SRC
-	src/assert.c)
+	src/assert.c
+	src/avl.c
+	src/helpers.c
+	src/list.c)
 set(ALL_SRC ${HDR} ${SRC})
 
 add_library(${PROJECT_NAME} STATIC ${ALL_SRC})

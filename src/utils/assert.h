@@ -16,8 +16,6 @@
 extern "C" {
 #endif
 
-#define LIKELY(x)   (x)
-#define UNLIKELY(x) (x)
 #define ASSERT(x)   (assert_impl((x), __FILE__, __LINE__, #x))
 
 void assert_impl(bool val, const char *file, unsigned line, const char *expr);
