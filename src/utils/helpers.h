@@ -22,6 +22,9 @@ extern "C" {
 #define UNUSED(x)   ((void)(x))
 #define LIKELY(x)   (x)
 #define UNLIKELY(x) (x)
+    
+#define MAX(a, b) ((a) > (b) ? (a) : (b))
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
 
 // Memory basics
 
@@ -79,6 +82,13 @@ bool fs_file_exists(const char *path);
 char *fs_make_path(const char *path, ...);
 char *fs_parent(const char *path);
 
+// String handling
+#ifdef UTILS_WINDOWS
+size_t getline(char **lineptr, size_t *n, FILE *stream);
+#endif
+
+void str_trim_space(char *str);
+unsigned str_split_inplace(char *str, char delim, char **comps, unsigned max_comp);
 
 #ifdef __cplusplus
 }
